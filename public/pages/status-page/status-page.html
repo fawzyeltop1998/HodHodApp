@@ -1,0 +1,170 @@
+<div class="statusPageContainer full-height">
+    <div class="row no-gutters full-height">
+        <!-- Contact-->
+        <div class="col-4 full-height" style="border-right: 1px solid #ececec">
+            <div class="myStatusSection">
+                <div class="statusCard">
+                    <img
+                        class="statusCardImg viewed"
+                        src="photos/flamingoop.jpg"
+                        alt=""
+                    />
+                    <div class="statusCardText">
+                        <span class="statusContactName">My Status</span>
+                        <span class="statusTime">No updates</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="otherStatusSection">
+                <hr />
+
+                <span class="stateOfStatus" id="newStatuses">Recent</span>
+
+                <div class="statusCard">
+                    <img class="statusCardImg notViewed" src="" alt="" />
+                    <div class="statusCardText">
+                        <span class="statusContactName">My Status</span>
+                        <span class="statusTime">No updates</span>
+                    </div>
+                </div>
+
+                <span class="stateOfStatus">Viewed</span>
+
+                <div class="statusCard">
+                    <img
+                        class="statusCardImg viewed"
+                        src="photos/flamingoop.jpg"
+                        alt=""
+                    />
+                    <div class="statusCardText">
+                        <span class="statusContactName">My Status</span>
+                        <span class="statusTime">No updates</span>
+                    </div>
+                </div>
+            </div>
+
+            <div></div>
+        </div>
+
+        <!-- Status View  -->
+        <div class="col-8">
+            <div class="closeStatusView">
+                <a href="#" title="Close" id="closeStatusView">
+                    <div class="centered">
+                        <clr-icon shape="close-icon" size="20"></clr-icon>
+                    </div>
+                </a>
+            </div>
+
+            <div class="statusFirstLook centerVandH">
+                <div class="centered">
+                    <clr-icon shape="status-black-icon" size="100"></clr-icon>
+                </div>
+                <div class="textInSFL">
+                    Click on a contact to view their status updates
+                </div>
+            </div>
+
+            <div class="selectedStatus" style="display: none">
+                <div class="status-main-container">
+                    <div class="dashed-header">
+                        <div class="progressBarContainer">
+                            <div class="progressStatus">
+                                <div class="progressBar"></div>
+                            </div>
+                            <div class="progressStatus">
+                                <div class="progressBar"></div>
+                            </div>
+                            <div class="progressStatus">
+                                <div class="progressBar"></div>
+                            </div>
+                            <div class="progressStatus">
+                                <div class="progressBar"></div>
+                            </div>
+                            <div class="progressStatus">
+                                <div class="progressBar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-content-container">
+                        <div class="prevStatus">
+                            <a href="#" title="Prev">
+                                <clr-icon
+                                    shape="left-icon"
+                                    size="30"
+                                ></clr-icon>
+                            </a>
+                        </div>
+
+                        <div class="statusMedia">
+                            <img
+                                id="currentlyViewedImage"
+                                class="statusContent"
+                                src=""
+                            />
+
+                            <video
+                                autoplay
+                                class="statusContent currentlyViewedVideo"
+                            >
+                                <source src="" type="video/mp4" />
+                            </video>
+
+                            <div class="status-text">
+                                <p></p>
+                            </div>
+                        </div>
+
+                        <div class="nextStatus">
+                            <a href="#" title="Next">
+                                <clr-icon
+                                    shape="right-icon"
+                                    size="30"
+                                ></clr-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="replyToStatus">
+                        <div class="row no-gutters">
+                            <div class="col-1">
+                                <a href="#" title="Emoji">
+                                    <div class="centered">
+                                        <clr-icon
+                                            shape="emoji-icon"
+                                            size="30"
+                                        ></clr-icon>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-10">
+                                <form class="ui fluid mini input">
+                                    <input
+                                        id="messageInputField"
+                                        type="text"
+                                        placeholder="Type a reply..."
+                                    />
+                                </form>
+                            </div>
+                            <div class="col-1">
+                                <a href="#" title="Send">
+                                    <div class="centered">
+                                        <clr-icon
+                                            shape="send-icon"
+                                            size="30"
+                                        ></clr-icon>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="pages/status-page/get-status.js"></script>
+<script src="pages/status-page/status-page.js"></script>

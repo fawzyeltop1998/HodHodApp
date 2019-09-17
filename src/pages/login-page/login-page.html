@@ -1,0 +1,173 @@
+<!-- Login page -->
+
+<div class="wrapperOfLoginPage">
+    <div class="wrapperOfLoginCard">
+        <div class="card full-height">
+            <div class="row no-gutters full-height">
+                <div class="col-sm-6 full-height grid-container">
+                    <div class="loginSectionWrapper">
+                        <div class="aboutSection">
+                            <h5>Welcome to</h5>
+
+                            <div class="imageWithTitle">
+                                <div class="row no-gutters">
+                                    <div class="col-2"></div>
+
+                                    <div class="col-2">
+                                        <div>
+                                            <img src="photos/photo.png" class="imageFullWidth" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-8">
+                                        <h1 class="hodhodTitle font-grad">
+                                            HodHod
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="briefIntro">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel omnis doloremque voluptatum animi.
+                                </p>
+                            </div>
+                        </div>
+
+                        <form class="ui form loginForm">
+                            <div class="ui left icon input mb-2 iti">
+                                <input id="phoneNumber" style="padding-left: 3.5em;" type="tel" name="phoneNumber" placeholder="Phone Number" autofocus required />
+
+                                <span id="valid-msg" class="hide">✓ Valid</span>
+                                <span id="error-msg" class="hide"></span>
+                            </div>
+
+                            <div class="codeInputField">
+                                <div class="ui left icon input">
+                                    <input id="codeField" type="text" name="code" placeholder="Code" required />
+                                    <i class="key icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="logInBtn">
+                                <button class="ui button text-white bg-grad button-hover-grad">
+                                    Login
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="newUserSection">
+                            <p>
+                                Don't have an account?
+                                <span class="font-grad">Register Now</span>
+                            </p>
+
+                            <div class="orWithHr">
+                                <hr class="leftHr" />
+                                <i>Or</i>
+                                <hr class="rightHr" />
+                            </div>
+
+                            <p>
+                                Get your
+                                <span id="freeTrialClickable" class="font-grad">Free Trial</span
+                                >.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 full-height">
+                    <div class="wrapperForImageGradient">
+                        <div class="loginImageSection">
+                            <img
+                                class="imageFullWidth"
+                                src="photos/background.jpg"
+                            />
+                        </div>
+
+                        <div class="loginLinearGradient">
+                            <div class="logoTitleParagraph">
+                                <div class="logoOnImage">
+                                    <img
+                                        class="imageFullWidth"
+                                        src="photos/photo.png"
+                                    />
+                                </div>
+                                <div class="titleOnImage">
+                                    HodHod
+                                </div>
+                                <div class="paragraphOnImage">
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Aut velit quis nisi
+                                        accusamus. Voluptates laborum ab nemo
+                                        iste consectetur autem blanditiis,
+                                        deserunt rerum repellendus nulla nam
+                                        facere vitae iusto obcaecati?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="pages/login-page/login.js"></script>
+<script>
+    var input = document.querySelector("#phoneNumber"),
+        errorMsg = document.querySelector("#error-msg"),
+        validMsg = document.querySelector("#valid-msg");
+
+    // here, the index maps to the error code returned from getValidationError - see readme
+    var errorMap = [
+        "Invalid number",
+        "Invalid country code",
+        "Too short",
+        "Too long",
+        "Invalid number",
+    ];
+
+    var iti = require("intl-tel-input")(
+        document.querySelector("#phoneNumber"),
+        {
+            preferredCountries: ["eg", "sa"],
+            separateDialCode: true,
+        },
+    );
+    var reset = function() {
+        input.classList.remove("error");
+        errorMsg.innerHTML = "";
+        errorMsg.classList.add("hide");
+        validMsg.classList.add("hide");
+    };
+    var validate = function() {
+        reset();
+        if (input.value.trim()) {
+            if (iti.isValidNumber()) {
+                validMsg.classList.remove("hide");
+            } else {
+                input.classList.add("error");
+                var errorCode = iti.getValidationError();
+                errorMsg.innerHTML = errorMap[errorCode];
+                errorMsg.classList.remove("hide");
+            }
+        }
+    };
+
+    // on blur: validate
+    $("#phoneNumber").on("blur", validate);
+
+    // on keyup / change flag: reset
+    $("#phoneNumber").on("change keyup", reset);
+</script>
+<script
+    class="iti-load-utils"
+    async=""
+    src="../node_modules/intl-tel-input/build/js/utils.js"
+></script>

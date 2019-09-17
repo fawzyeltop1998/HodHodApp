@@ -1,0 +1,107 @@
+<!-- Free trial page -->
+<div class="wrapperOfFTPage">
+    <!-- This part is common between free trial page and verification code page -->
+    <div class="freeTrialHeader">
+        <div class="wrapperImgGrad">
+            <div class="imgHeader">le
+                <img class="imageFullWidth" src="photos/background.jpg" />
+            </div>
+
+            <div class="gradHeader">
+                <div class="logoTitle">
+                    <div class="row no-gutters">
+                        <div class="col-2">
+                            <div class="logoHeader">
+                                <img class="imageFullWidth" src="photos/photo.png" />
+                            </div>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="titleHeader">
+                                <p>HodHod</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainContentFT">
+        <div class="wrapperOfMainContentFT">
+            <div class="freeTrialLogoContainer">
+                <div class="FTLogo">
+                    <img class="imageFullWidth" src="photos/photo.png" alt="HodHod Logo" />
+                </div>
+            </div>
+
+            <!-- Free Trial Page -->
+            <div class="freeTrialInfo">
+                <div class="infoContainer">
+                    <h1 class="font-grad">Free Trial </h1>
+
+
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia dolorem quam eum consectetur similique deleniti nemo, laudantium pariatur. Earum sunt quasi ducimus quod fuga nesciunt, eum labore nostrum aperiam consectetur.
+                    </p>
+
+                    <div class="freeTrialBtn">
+                        <button id="generateCodeBtn" class="ui button text-white bg-grad big button-hover-grad" data-toggle="modal" data-target="#centralModalSuccess" onclick="createOwnerCode()">
+                            Generate Your Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Central Modal Medium Success -->
+    <div class="modal fade centerVandH" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header bg-grad">
+                    <p class="heading lead">Get Your Free Tial</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text"
+                            >&times;</span
+                        >
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check fa-4x mb-3 animated rotateIn font-grad"></i>
+
+                        <h1 class="font-grad">CONGRATULATIONS!</h1>
+                        <p>You get your code.</p>
+                        <p>Here it is.</p>
+                        <p id="loadedP"></p>
+                        <div id="loading-spinner" class="spinner-border text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="separator"></div>
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <button id="login-btn" class="ui button disabled text-white bg-grad medium button-hover-grad">
+                        Login Now
+                    </button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+
+    <div id="backInFT" class="backBtn">
+        <a href="#" title="Back">
+            <div class="centered">
+                <clr-icon shape="back-icon" size="75"></clr-icon>
+            </div>
+        </a>
+    </div>
+</div>

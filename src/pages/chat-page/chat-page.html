@@ -1,0 +1,471 @@
+<!-- Chat page -->
+<div class="wrapper-of-the-page">
+    <div class="wrapper-of-contacts">
+        <!--Header containing user photo, name and icons-->
+        <div class="header-of-contacts">
+            <!--Wrapper for Image, Name and Icons-->
+            <!--Image-->
+            <div class="current-user-image">
+                <img class="get-my-profile" src="photos/photo.png" />
+            </div>
+
+            <!--Name-->
+            <div class="current-username">
+                <span>Alaa Othman</span>
+            </div>
+
+            <!--Icons-->
+            <div class="icons-wrapper">
+                <div class="row no-gutters">
+                    <div class="col-4">
+                        <a id="status" href="#" title="Status">
+                            <div class="centered">
+                                <clr-icon shape="status-icon" size="25"></clr-icon>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a href="#" title="Family Members">
+                            <div class="centered">
+                                <clr-icon shape="groupChat-icon" size="25"></clr-icon>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-4">
+                        <a id="userMenu" class="user-menu-icon" href="" title="Menu">
+                            <div class="centered">
+                                <clr-icon shape="menu-icon" size="25"></clr-icon>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="userMenu scrollableMenu">
+                        <ul>
+                            <li id="generateUserCode">
+                                <span>Generate user code</span>
+                            </li>
+                            <li class="get-my-profile">
+                                <span>Profile</span>
+                            </li>
+                            <li>
+                                <span>Settings</span>
+                            </li>
+                            <li onclick="logout()">
+                                <span>Log out</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Chat card-->
+
+        <!--This div is only to fix the overflow problem-->
+        <div style="position: relative">
+            <div class="chat-cards-of-contacts">
+                <div class="chat-card">
+                    <div class="row no-gutters">
+                        <!--Image-->
+                        <div class="col-1">
+                            <div class="contactImage">
+                                <img src="photos/person.jpg" />
+                            </div>
+                        </div>
+
+                        <!--User Name and Last Message Text-->
+                        <div class="col-9">
+                            <div class="contactNameAndMessage">
+                                <div class="contactName">
+                                    Ann Smith
+                                </div>
+                                <div class="contactMessage">
+                                    Hi. how are you? I want to eat now. Do you want to eat?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-card unread">
+                    <div class="row no-gutters">
+                        <!--Image-->
+                        <div class="col-1">
+                            <div class="contactImage">
+                                <img src="photos/person.jpg" />
+                            </div>
+                        </div>
+
+                        <!--User Name and Last Message Text-->
+                        <div class="col-9">
+                            <div class="contactNameAndMessage">
+                                <div class="contactName">
+                                    Ann Smith
+                                </div>
+                                <div class="contactMessage">
+                                    Hi. how are you? I want to eat now. Do you want to eat?
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--if message isnot read -->
+                        <div class="unreadMessageMarker bg-grad"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="wrapper-of-profile" style="display: none">
+        <div class="header-of-profile">
+            <div class="profile-header-components-container">
+                <div class="back-to-contacts">
+                    <clr-icon shape="back-white-icon" size="25"></clr-icon>
+                </div>
+                <div class="profile-text">
+                    <span>Profile</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="position: relative">
+            <div class="main-of-profile">
+                <div class="profile-image">
+                    <img src="photos/photo.png" alt="" />
+                </div>
+                <div class="profile-name">
+                    <span class="label-your-name">Your Name</span>
+                    <div class="name-text"></div>
+                </div>
+                <div class="profile-bio">
+                    <span class="label-bio">Your Bio</span>
+                    <div class="bio-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper-of-chat">
+        <!--Header of chat section containing contact photo, name and icons-->
+        <div class="header-of-chat">
+            <!--Wrapper for Image, Name and Icons-->
+            <!--Image-->
+            <div class="contact-chat-image">
+                <img src="photos/photo.png" />
+            </div>
+
+            <!--Name-->
+            <div class="contact-chat-name">
+                <span id="contactName">Alaa Othman</span><br />
+                <span id="contactState" style="font-size: 15px; font-weight: normal">Online</span
+                >
+            </div>
+
+            <!--Icons-->
+            <div class="icons-chat-wrapper">
+                <a href="#" title="Attach">
+                    <div class="centered">
+                        <clr-icon shape="attach-icon" size="25"></clr-icon>
+                    </div>
+                </a>
+
+                <a id="chatMenu" class="menuIcon" title="Menu">
+                    <div class="centered">
+                        <clr-icon shape="menu-icon" size="25"></clr-icon>
+                    </div>
+                </a>
+
+                <div class="chatMenu scrollableMenu">
+                    <ul>
+                        <li>
+                            <span>Generate user code</span>
+                </li>
+
+                <li><span>Settings</span></li>
+                <li><span>Log out</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for chat messages -->
+
+    <!--This div is only to fix the overflow problem-->
+    <div style="position: relative">
+        <div id="chatMessagesContainer" class="chat-messages-container">
+            <!-- Text Type -->
+            <div class="message">
+                <div class="text-of-sent-message-container">
+                    <p class="text-type">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi porro, minima asperiores sed, voluptate aperiam natus non temporibus ut, odit placeat dolores iusto voluptates totam quas dignissimos? Velit, quasi aspernatur?
+                    </p>
+
+                    <div class="message-state-container">
+                        <span class="time-of-message">10:50 pm</span>
+                        <span class="message-state">
+                                <clr-icon
+                                    shape="not-sent-icon"
+                                    size="15"
+                                ></clr-icon>
+                            </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message">
+                <div class="text-of-received-message-container">
+                    <p class="text-type">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi porro, minima asperiores sed, voluptate aperiam natus non temporibus ut, odit placeat dolores iusto voluptates totam quas dignissimos? Velit, quasi aspernatur?
+                    </p>
+
+                    <div class="message-state-container">
+                        <span class="time-of-message">10:50 pm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Type -->
+
+            <div class="message">
+                <div class="text-of-sent-message-container">
+                    <div class="image-type">
+                        <img class="modal-image" src="photos/flamingoop.jpg" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="message">
+                <div class="text-of-received-message-container">
+                    <div class="image-type">
+                        <img class="modal-image" src="photos/person.jpg" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Type -->
+
+            <div class="message">
+                <div class="text-of-sent-message-container">
+                    <div class="video-type">
+                        <video class="modal-video">
+                                <source
+                                    src="videoes/big_buck_bunny.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+
+                        <div class="play-video">
+                            <a href="#" title="Play">
+                                <div class="centered">
+                                    <clr-icon shape="play-icon" size="60"></clr-icon>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message">
+                <div class="text-of-received-message-container">
+                    <div class="video-type">
+                        <video class="modal-video">
+                                <source
+                                    src="videoes/big_buck_bunny.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+
+                        <div class="play-video">
+                            <a href="#" title="Play">
+                                <div class="centered">
+                                    <clr-icon shape="play-gray-icon" size="60"></clr-icon>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Record Type -->
+            <div class="message">
+                <div class="text-of-sent-message-container">
+                    <div class="record-type">
+                        <audio controls>
+                                <source src="#" type="audio/mp3" />
+                            </audio>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message">
+                <div class="text-of-received-message-container">
+                    <div class="record-type">
+                        <audio controls>
+                                <source src="" type="audio/mp3" />
+                            </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message box and send btn -->
+    <div class="message-text-section">
+        <div class="row no-gutters">
+            <div class="col-1">
+                <a href="#" title="Emoji">
+                    <div class="centered">
+                        <div class="emoji-panel">
+                            <button id="emoji-picker" class="chat-input-tool">
+                                    <clr-icon
+                                        shape="emoji-icon"
+                                        size="30"
+                                    ></clr-icon>
+                                </button>
+                        </div>
+                        <div id="appendEmojies"></div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-10 ">
+                <form class="ui fluid medium input ">
+                    <input id="messageInputField" type="text" name="content" placeholder="Type your message" autofocus />
+                </form>
+            </div>
+
+            <div class="col-1">
+                <a href="#" title="Send">
+                    <div class="centered">
+                        <clr-icon shape="send-icon" size="35"></clr-icon>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Media Modal -->
+<div id="mediaModal" class="modal mediaModal">
+    <header class="modalHeader">
+        <div class="leftOfModalHeader">
+            <div class="row no-gutters">
+                <div class="col-1">
+                    <div class="modalHeaderImage">
+                        <img src="photos/photo.png" />
+                    </div>
+                </div>
+
+                <div class="col-11">
+                    <div class="modalHeaderText">
+                        <span>Alaa Othman</span>
+                    </div>
+
+                    <div class="modalHeaderDateTime">
+                        <div class="date">
+                            <span>7/11/2019</span>
+                        </div>
+
+                        <div class="at">
+                            <span>at</span>
+                        </div>
+
+                        <div class="time">
+                            <span>10:35 pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightOfModalHeader">
+            <div style="
+                        width: 20%;
+                        float: right;
+                        padding-top: 1%;
+                    ">
+                <div class="row no-gutters">
+                    <div class="col">
+                        <a href="#" title="Forward">
+                            <div class="centered">
+                                <clr-icon shape="forward-icon" size="20"></clr-icon>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" title="Download" download>
+                            <div class="centered">
+                                <clr-icon shape="download-icon" size="20"></clr-icon>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" title="Close" id="closeModal">
+                            <div class="centered">
+                                <clr-icon shape="close-icon" size="20"></clr-icon>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="modalContentWrapper">
+        <div class="row no-gutters full-height">
+            <div class="col-1 full-height">
+                <div class="leftNav">
+                    <a href="#" title="Left">
+                        <div class="centered">
+                            <clr-icon shape="left-icon" size="30"></clr-icon>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-10 full-height">
+                <div class="modal-media-content full-height">
+                    <img class="media-modal-content" id="img01" style="cursor: zoom-in;" />
+
+                    <video controls class="media-modal-content" id="vid01">
+                            <source
+                                src="videoes/big_buck_bunny.mp4"
+                                type="video/mp4"
+                            />
+                        </video>
+                </div>
+            </div>
+
+            <div class="col-1 full-height">
+                <div class="rightNav">
+                    <a href="#" title="Right">
+                        <div class="centered">
+                            <clr-icon shape="right-icon" size="30"></clr-icon>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="modalFooter">
+        <div class="imgContainer">
+            <img src="photos/background.jpg" />
+        </div>
+    </footer>
+</div>
+</div>
+<script src="pages/chat-page/chat-page.js"></script>
+<script src="pages/chat-page/websockets.js"></script>
+<script src="pages/chat-page/getMyFamily.js"></script>
+<script src="pages/chat-page/routing-and-effects.js"></script>
+<script src="pages/chat-page/getMyConversations.js"></script>
+<script src="pages/chat-page/getMessagesInConversation.js"></script>
+<script src="pages/chat-page/get-my-profile.js"></script>
+<script>
+    $.get("pages/chat-page/emojies.html", function(data) {
+        $("#appendEmojies").append(data);
+    });
+</script>

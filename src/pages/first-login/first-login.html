@@ -1,0 +1,147 @@
+<style>
+    #file-upload-pic {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: inherit;
+    }
+</style>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+/>
+<div class="ui middle aligned three column centered grid centerVandH">
+    <div class="row">
+        <div class="column">
+            <div class="ui segment">
+                <div class="ui centered card ">
+                    <div class="image">
+                        <input
+                            class="animated infinite flash delay-1s slow"
+                            type="image"
+                            id="file-upload-pic"
+                            src="https://fomantic-ui.com/images/wireframe/white-image.png"
+                        />
+                    </div>
+                    <div class="content">
+                        <a class="header pink-text"
+                            >Choose your profile picture!</a
+                        >
+                    </div>
+                </div>
+                <form action="#" class="ui form ">
+                    <input
+                        type="file"
+                        id="my_file"
+                        style="display: none;"
+                        accept=".png, .jpg, .jpeg"
+                        name="photo"
+                    />
+                    <div class="field required">
+                        <label>Name</label>
+                        <input
+                            placeholder="e.g. John Snow"
+                            type="text"
+                            name="name"
+                            required
+                        />
+                    </div>
+                    <div class="field required">
+                        <label>Bio</label>
+                        <input
+                            placeholder="e.g. Hello, I'm using HodHod"
+                            type="text"
+                            name="bio"
+                            required
+                        />
+                    </div>
+
+                    <button class="ui submit button bg-grad text-white fluid">
+                        Save
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    class PictureChoice {
+        constructor() {
+            this.index = 0;
+            this.animation = ["swing", "tada", "wobble", "jello"];
+            this.response = [
+                "Okay, Nice One 💙",
+                "Yeah! Much better 😍",
+                "Oh this looks great 😄",
+                "Are you ever gonna decide? 🤔",
+            ];
+        }
+
+        increaceIndex() {
+            this.index = ++this.index % this.animation.length;
+        }
+
+        getAction() {
+            const action = {
+                animation: this.animation[this.index],
+                response: this.response[this.index],
+            };
+            this.increaceIndex();
+            return action;
+        }
+    }
+
+    var infoArea = document.getElementById("my_file");
+    infoArea.addEventListener("change", showImage);
+    const pictureChoice = new PictureChoice();
+
+    function showImage(event) {
+        // the change event gives us the input it occurred in
+        var input = event.srcElement;
+
+        $("#file-upload-pic").attr("src", input.files[0].path);
+
+        const action = pictureChoice.getAction();
+        $(".header").text(action.response);
+        $("input[type='image']")
+            .removeClass()
+            .addClass(`animated ${action.animation}`);
+    }
+
+    function showUploadFile() {
+        $("input[id='my_file']").click();
+    }
+    $("input[type='image']").click(showUploadFile);
+    $(".content").click(showUploadFile);
+
+    $("form").submit(async function(e) {
+        e.preventDefault();
+        $("form").addClass("loading");
+
+        $("input[type='image']")
+            .removeClass()
+            .addClass("animated flip infinite slow");
+
+        $("form :input[type='text']").val(function(_, text) {
+            return text.trim();
+        });
+
+        const formData = new FormData(document.querySelector("form"));
+
+        const response = await fetch(`${window.baseUrl}/users`, {
+            method: "PATCH",
+            headers: authHeaders,
+            body: formData,
+        });
+
+        me = await response.json();
+
+        $("form").removeClass("loading");
+        $("input[type='image']").removeClass();
+
+        if (response.status === 200)
+            $("body").load(`pages/chat-page/chat-page.html`);
+        else alert(response.text);
+    });
+</script>

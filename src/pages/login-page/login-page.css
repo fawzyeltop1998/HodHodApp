@@ -1,0 +1,186 @@
+#error-msg {
+    color: red;
+}
+
+#valid-msg {
+    color: #00c900;
+}
+
+input.error {
+    border: 1px solid #ff7c7c;
+}
+
+.hide {
+    display: none;
+}
+
+
+/*======================================================================================================================*/
+
+
+/*Login Page Styles
+===================*/
+
+.wrapperOfLoginPage {
+    height: 100%;
+    background-color: #f6f6f6;
+    display: grid;
+    place-items: center;
+}
+
+.wrapperOfLoginCard {
+    width: 85%;
+    height: 75%;
+}
+
+
+/*Righthand Section 
+Image with linear Gradient
+===========================*/
+
+
+/*This is to set the image to be full width of its container*/
+
+.imageFullWidth {
+    width: 100%;
+}
+
+.wrapperForImageGradient {
+    position: relative;
+    height: 100%;
+}
+
+.loginImageSection,
+.loginImageSection img {
+    height: 100%;
+}
+
+.loginLinearGradient {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-50deg, #d9308abf, #f27932d9);
+    padding: 15px;
+}
+
+.logoTitleParagraph {
+    text-align: center;
+    width: 80%;
+    height: 50%;
+}
+
+.logoOnImage {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.paragraphOnImage {
+    color: white;
+    padding: 0 25px;
+}
+
+.titleOnImage {
+    font-weight: bold;
+    font-size: 50px;
+    padding: 10px;
+    color: white;
+    margin: 15px;
+}
+
+
+/*Lefthand Section
+login form
+==================*/
+
+.loginSectionWrapper {
+    width: 75%;
+    height: 85%;
+    place-self: center;
+}
+
+.aboutSection {
+    text-align: center;
+}
+
+.aboutSection h5 {
+    color: #828282;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.imageWithTitle {
+    margin-bottom: 20px;
+}
+
+.hodhodTitle {
+    font-size: 4vw;
+    text-align: left;
+    padding-left: 15px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    margin: 0;
+}
+
+.briefIntro {
+    color: #a7a7a7;
+}
+
+
+/*Login form Section
+====================*/
+
+.loginForm {
+    margin: 20px 0;
+}
+
+.iti {
+    width: 100%;
+}
+
+.codeInputField {
+    margin-bottom: 10px;
+}
+
+.logInBtn {
+    margin-top: 15px;
+}
+
+.codeInputField div,
+.logInBtn button {
+    width: 100%;
+}
+
+.newUserSection {
+    text-align: center;
+    margin-top: 10px;
+    color: #828282;
+}
+
+.newUserSection span {
+    cursor: pointer;
+}
+
+.newUserSection hr {
+    width: 33%;
+    display: inline-block;
+    position: absolute;
+}
+
+.orWithHr {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.orWithHr .leftHr {
+    left: 10%;
+}
+
+.orWithHr .rightHr {
+    right: 10%;
+}

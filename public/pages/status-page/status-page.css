@@ -1,0 +1,174 @@
+.statusPageContainer {
+    background: #fbf8f9e0;
+    padding: 0 0 0 10px;
+}
+.myStatusSection {
+    height: 15%;
+    padding-top: 35px;
+}
+.statusCard {
+    height: 60px;
+}
+
+.statusCard:hover {
+    cursor: pointer;
+    background: #dec5cb3b;
+}
+
+.statusCardImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin: 5px;
+    padding: 2px;
+}
+
+.notViewed {
+    border: 2px solid #009588;
+}
+
+.viewed {
+    border: 2px solid #c5c5c5;
+}
+
+.selectedStatusCard {
+    background: #dec5cb3b;
+}
+
+.statusCardText {
+    display: inline-block;
+    margin: 5px 0 0 5px;
+    padding: 5px 0 0;
+}
+
+.statusCardText span {
+    display: block;
+}
+
+.statusContactName {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.otherStatusSection {
+    overflow: auto;
+    height: 85%;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.otherStatusSection .statusCard {
+    margin-bottom: 5px;
+}
+
+.stateOfStatus {
+    text-transform: uppercase;
+}
+
+.closeStatusView {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+}
+
+.statusFirstLook {
+    width: 500px;
+    height: 200px;
+}
+
+.statusFirstLook .textInSFL {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.selectedStatus {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.status-main-container {
+    width: 85%;
+    height: 85%;
+    display: grid;
+    grid-template-rows: 5px auto 50px;
+    grid-row-gap: 15px;
+}
+.progressBarContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 3px;
+}
+
+.progressStatus {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+.progressBar {
+    width: 0;
+    height: 5px;
+    background: linear-gradient(-50deg, #d9308abf, #f27932d9);
+    border-radius: 10px;
+}
+
+.status-content-container {
+    display: grid;
+    grid-template-columns: 1fr 30vw 1fr;
+    place-items: center;
+}
+
+.prevStatus div,
+.nextStatus div {
+    width: 30px;
+    height: 30px;
+}
+
+.statusMedia {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.statusContent {
+    max-width: 30vw;
+    max-height: 100%;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.status-text {
+    position: absolute;
+    place-self: end;
+    max-height: 50%;
+    overflow: auto;
+    text-align: center;
+    background: linear-gradient(185deg, #db4796b5, transparent);
+    color: black;
+    width: 100%;
+    font-size: 1.6em;
+    display: grid;
+    height: 20%;
+}
+
+.status-text p {
+    width: 80%;
+    margin: auto;
+}
+
+.replyToStatus {
+    border-radius: 30px;
+    width: 80%;
+    background: linear-gradient(-50deg, #d9308a, #e16758);
+    padding: 1.4% 0px;
+    height: 50px;
+    place-self: center;
+}

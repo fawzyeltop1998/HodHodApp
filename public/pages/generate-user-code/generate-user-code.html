@@ -1,0 +1,108 @@
+<!-- Generate user code trial page -->
+<div class="wrapperOfGCPage">
+    <!-- This part is common between free trial page, verification code page and generate user code page -->
+    <div class="GCHeader">
+        <div class="wrapperImgGrad">
+            <div class="imgHeader">
+                <img class="imageFullWidth" src="photos/background.jpg" />
+            </div>
+
+            <div class="gradHeader">
+                <div class="logoTitle">
+                    <div class="row no-gutters">
+                        <div class="col-2">
+                            <div class="logoHeader">
+                                <img class="imageFullWidth" src="photos/photo.png" />
+                            </div>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="titleHeader">
+                                <p>HodHod</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainContentGC">
+        <div class="wrapperOfMainContentFT">
+            <div class="GCLogoContainer">
+                <div class="GCLogo">
+                    <img class="imageFullWidth" src="photos/photo.png" alt="HodHod Logo" />
+                </div>
+            </div>
+
+            <div class="GCInfo">
+                <div class="infoContainer">
+                    <h1 class="font-grad">Generate User Code</h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia dolorem quam eum consectetur similique deleniti nemo, laudantium pariatur. Earum sunt quasi ducimus quod fuga nesciunt, eum labore nostrum aperiam consectetur.
+                    </p>
+
+                    <div class="GCBtn">
+                        <button class="ui button text-white bg-grad big button-hover-grad" data-toggle="modal" data-target="#centralModalSuccess">
+                            Generate Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Central Modal Medium Success -->
+    <div class="modal fade centerVandH" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header bg-grad">
+                    <p class="heading lead">Get User Code</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text"
+                            >&times;</span
+                        >
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check fa-4x mb-3 animated rotateIn font-grad"></i>
+
+                        <h1 class="font-grad">CONGRATULATIONS!</h1>
+                        <p>The code is ready.</p>
+                        <p>Here it is.</p>
+                        <p id="loadedP"></p>
+                        <div id="loading-spinner" class="spinner-border text-light" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="separator"></div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <button onclick="copyCode(this)" class="ui button text-white bg-grad medium button-hover-grad">
+                        Copy the generated code &nbsp;
+                        <i class="clipboard icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="backInGC" class="backBtn">
+        <a href="#" title="Back">
+            <div class="centered">
+                <clr-icon shape="back-icon" size="75"></clr-icon>
+            </div>
+        </a>
+    </div>
+</div>
+
+<script src="pages/generate-user-code/createUser.js"></script>
+<script src="pages/generate-user-code/generate-user-code.js"></script>
